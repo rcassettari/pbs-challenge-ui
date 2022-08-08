@@ -1,0 +1,26 @@
+<div class="container" >
+  <table class="table table-bordered ">
+      <thead class="thead-light">
+        <tr>
+          <th>Mês</th>
+          <th>Ano</th>
+          <th>Código do Produto</th>
+          <th>Descrição do Produto</th>
+          <th>NR Lançamento</th>
+          <th>Descrição</th> 
+          <th>Valor</th>                              
+        </tr>
+      </thead>
+      <tbody *ngFor="let manualMovement of manualMovementsList; let counter = index" >
+        <tr [ngStyle]="{'background-color': colors[counter % 2]}"  >
+          <td>{{manualMovement.monthOfYear}}</td>
+          <td>{{manualMovement.year}}</td>
+          <td>{{manualMovement.product.code}}</td>
+          <td>{{manualMovement.product.description}}</td>          
+          <td>{{manualMovement.noteNumber}}</td>
+          <td>{{manualMovement.description}}</td>                              
+          <td>{{manualMovement.value}}</td>          
+        </tr>
+      </tbody>
+    </table>
+</div> 
